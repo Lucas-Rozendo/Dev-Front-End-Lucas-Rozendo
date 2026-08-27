@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de Tarefas Acadêmicas</title>
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
@@ -12,52 +13,49 @@
    </header>
 
    <main>
-        <section aria-labelledby="titulo-filtros">
-            <h2 id="titulo-filtros">Filtro de buscas</h2>
+        <h2>Filtro de buscas</h2>
+        <label for="buscar-tarefa">Buscar Tarefa: </label>
+        <input id="buscar-tarefa" type="search" name="buscar-tarefa">
 
-            <label for="buscar-tarefa">Buscar Tarefa por título: </label>
-            <input id="buscar-tarefa" type="search" name="buscar-tarefa">
-            <button type="button">Buscar</button>
+        <fieldset>
+            <legend>Prioridade</legend>
+            <input type="radio" id="baixa" name="prioridade" value="baixa">
+            <label for="baixa">Baixa</label>
 
-            <fieldset>
-                <legend>Prioridade</legend>
-                <input type="radio" id="baixa" name="prioridade" value="baixa">
-                <label for="baixa">Baixa</label>
+            <input type="radio" id="media" name="prioridade" value="media">
+            <label for="media">Média</label>
 
-                <input type="radio" id="media" name="prioridade" value="media">
-                <label for="media">Média</label>
+            <input type="radio" id="alta" name="prioridade" value="alta">
+            <label for="alta">Alta</label>
+        </fieldset>
 
-                <input type="radio" id="alta" name="prioridade" value="alta">
-                <label for="alta">Alta</label>
-            </fieldset>
+        <fieldset>
 
-            <fieldset>
+            <legend>Status</legend>
 
-                <legend>Status</legend>
+            <input type="radio" id="a-fazer" name="status" value="a-fazer">
+            <label for="a-fazer">A fazer</label>
 
-                <input type="radio" id="a-fazer" name="status" value="a-fazer">
-                <label for="a-fazer">A fazer</label>
+            <input type="radio" id="em-andamento" name="status" value="em-andamento">
+            <label for="em-andamento">Em andamento</label>
 
-                <input type="radio" id="em-andamento" name="status" value="em-andamento">
-                <label for="em-andamento">Em andamento</label>
+            <input type="radio" id="em-revisao" name="status" value="em-revisao">
+            <label for="em-revisao">Em revisão</label>
 
-                <input type="radio" id="em-revisao" name="status" value="em-revisao">
-                <label for="em-revisao">Em revisão</label>
-
-                <input type="radio" id="concluidas" name="status" value="concluidas">
-                <label for="concluidas">Concluídas</label>
-            </fieldset>
-        </section>
+            <input type="radio" id="concluidas" name="status" value="concluidas">
+            <label for="concluidas">Concluídas</label>
+        </fieldset>
+        
         <section aria-labelledby="titulo-a-fazer">
             <h2 id="titulo-a-fazer">A fazer</h2>
 
             <ul>
                 <li>
                     <article>
-                        <h3>Finalizar relatório de Banco de Dados</h3>
+                        <h3>Finalizar relátorio de Banco de Dados</h3>
                             <p>Projeto: Sistema Biblioteca</p>
                             <p>Responsável: Lucas Gabriel Rozendo da Silva</p>
-                            <p>Prazo: 31/12/2026</p>
+                            <p>Prazo: 2023-12-31</p>
                             <p>Prioridade: Alta</p>
                     </article>
                 </li>
@@ -75,7 +73,7 @@
                         <h3>Revisar código do projeto de Desenvolvimento Web</h3>
                             <p>Projeto: Sistema de E-commerce</p>
                             <p>Responsável: Ana</p>
-                            <p>Prazo: 18/09/2026</p>
+                            <p>Prazo: 2023-11-15</p>
                             <p>Prioridade: Baixa</p>
                     </article>
                 </li>
@@ -90,7 +88,7 @@
                         <h3>Desenvolver módulo de autenticação</h3>
                             <p>Projeto: Sistema de Gerenciamento de Usuários</p>
                             <p>Responsável: Lucas Rozendo</p>
-                            <p>Prazo: 11/10/2026</p>
+                            <p>Prazo: 2023-10-20</p>
                             <p>Prioridade: Alta</p>
                     </article>
                 </li>
@@ -99,7 +97,7 @@
                         <h3>Implementar testes unitários para o módulo de pagamento</h3>
                             <p>Projeto: Sistema de E-commerce</p>
                             <p>Responsável: Gabriel</p>
-                            <p>Prazo: 14/08/2026</p>
+                            <p>Prazo: 2023-09-30</p>
                             <p>Prioridade: Média</p>
                     </article>
                 </li>
@@ -114,7 +112,7 @@
                         <h3>Revisar documentação do projeto de Sistema de Reservas</h3>
                             <p>Projeto: Sistema de Reservas</p>
                             <p>Responsável: Ana</p>
-                            <p>Prazo: 01/09/2026</p>
+                            <p>Prazo: 2023-11-05</p>
                             <p>Prioridade: Média</p>
                     </article>
                 </li>
@@ -129,7 +127,7 @@
                         <h3>Finalizar relatório de Análise de Sistemas</h3>
                             <p>Projeto: Sistema de Controle de Estoque</p>
                             <p>Responsável: Lucas Rozendo</p>
-                            <p>Prazo: 20/01/2027</p>
+                            <p>Prazo: 2023-08-15</p>
                             <p>Prioridade: Alta</p>
                     </article>
                 </li>
@@ -138,7 +136,7 @@
                         <h3>Implementar funcionalidade de busca avançada</h3>
                             <p>Projeto: Sistema de Biblioteca</p>
                             <p>Responsável: Gabriel</p>
-                            <p>Prazo: 19/12/2026</p>
+                            <p>Prazo: 2023-09-10</p>
                             <p>Prioridade: Média</p>
                     </article>
                 </li>
