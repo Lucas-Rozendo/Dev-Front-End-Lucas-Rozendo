@@ -1,0 +1,76 @@
+{
+    "tarefas": [
+        {
+            "id": "t1",
+            "titulo": "Finalizar relatório de Banco de Dados",
+            "projeto": "Sistema Biblioteca",
+            "responsavel": "Lucas Gabriel Rozendo da Silva",
+            "status": "a-fazer",
+            "prioridade": "alta",
+            "prazo": "2026-09-08"
+        },
+        {
+            "id": "t2",
+            "titulo": "Preparar apresentação de Engenharia de Requisitos",
+            "projeto": "Sistema de Agendamento",
+            "responsavel": "Gabriel",
+            "status": "a-fazer",
+            "prioridade": "media",
+            "prazo": "2026-09-12"
+        },
+        {
+            "id": "t3",
+            "titulo": "Revisar código do projeto de Desenvolvimento Web",
+            "projeto": "Sistema de E-commerce",
+            "responsavel": "Ana",
+            "status": "a-fazer",
+            "prioridade": "baixa",
+            "prazo": "2026-09-15"
+        },
+        {
+            "id": "t4",
+            "titulo": "Desenvolver módulo de autenticação",
+            "projeto": "Sistema de Gerenciamento de Usuários",
+            "responsavel": "Lucas Rozendo",
+            "status": "em-andamento",
+            "prioridade": "alta",
+            "prazo": "2026-09-10"
+        },
+        {
+            "id": "t5",
+            "titulo": "Implementar testes unitários para o módulo de pagamento",
+            "projeto": "Sistema de E-commerce",
+            "responsavel": "Gabriel",
+            "status": "em-andamento",
+            "prioridade": "media",
+            "prazo": "2026-09-14"
+        },
+        {
+            "id": "t6",
+            "titulo": "Revisar documentação do projeto de Sistema de Reservas",
+            "projeto": "Sistema de Reservas",
+            "responsavel": "Ana",
+            "status": "em-revisao",
+            "prioridade": "media",
+            "prazo": "2026-09-09"
+        },
+        {
+            "id": "t7",
+            "titulo": "Finalizar relatório de Análise de Sistemas",
+            "projeto": "Sistema de Controle de Estoque",
+            "responsavel": "Lucas Rozendo",
+            "status": "concluida",
+            "prioridade": "alta",
+            "prazo": "2026-09-05"
+        },
+        {
+            "id": "t8",
+            "titulo": "Implementar funcionalidade de busca avançada",
+            "projeto": "Sistema de Biblioteca",
+            "responsavel": "Gabriel",
+            "status": "concluida",
+            "prioridade": "media",
+            "prazo": "2026-09-06"
+        }
+    ]
+}
