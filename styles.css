@@ -31,6 +31,11 @@ body {
     line-height: 1.5;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 header {
     padding: var(--espaco-grande) clamp(1rem, 3vw, 2rem);
     color: var(--cor-superficie);
@@ -61,12 +66,31 @@ main {
     font-size: 1.25rem;
 }
 
-.controles > label {
+.controles > label,
+.campo-busca label,
+.campo-ordenacao label {
     min-height: 1.5rem;
     font-weight: bold;
 }
 
+.campo-busca,
+.campo-ordenacao {
+    min-width: 0;
+}
+
 #buscar-tarefa {
+    width: 100%;
+    min-width: 0;
+    min-height: 2.75rem;
+    padding: var(--espaco-pequeno);
+    color: var(--cor-texto);
+    background-color: var(--cor-superficie);
+    border: 0.0625rem solid var(--cor-borda);
+    border-radius: var(--raio);
+    font: inherit;
+}
+
+#ordenacao {
     width: 100%;
     min-width: 0;
     min-height: 2.75rem;
@@ -110,6 +134,7 @@ fieldset label {
 }
 
 input:focus-visible,
+select:focus-visible,
 button:focus-visible {
     outline: 0.1875rem solid var(--cor-foco);
     outline-offset: 0.125rem;

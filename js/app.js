@@ -1,8 +1,13 @@
 import { carregarTarefas } from "./api.js";
-import { renderizarEstado } from "./estados.js";
+import { estado, limparCriterios } from "./estado.js";
+import { renderizarAplicacao } from "./estados.js";
 import { instalarEventosDoQuadro } from "./renderizacao.js";
 
 const quadro = document.querySelector("#quadro-tarefas");
+const campoBusca = document.querySelector("#buscar-tarefa");
+const controles = document.querySelector(".controles");
+const campoOrdenacao = document.querySelector("#ordenacao");
+const botaoLimpar = document.querySelector("#limpar-filtros");
 
 function criarMensagemDeErro(erro) {
     if (erro.name === "TypeError") {
@@ -20,21 +25,51 @@ function criarMensagemDeErro(erro) {
     return "Ocorreu um erro inesperado ao carregar as tarefas.";
 }
 
-async function iniciar() {
-    renderizarEstado("carregando");
+function instalarEventosDosControles() {
+    campoBusca.addEventListener("input", (evento) => {
+        estado.busca = evento.currentTarget.value;
+        renderizarAplicacao(estado);
+    });
 
-    try {
-        const tarefas = await carregarTarefas();
+    controles.addEventListener("change", (evento) => {
+        if (!(evento.target instanceof HTMLInputElement)) return;
 
-        if (tarefas.length === 0) {
-            renderizarEstado("vazio", tarefas);
-            return;
+        if (evento.target.name === "status") {
+            estado.status = evento.target.value;
         }
 
-        renderizarEstado("sucesso", tarefas);
-        instalarEventosDoQuadro(quadro, tarefas);
+        if (evento.target.name === "prioridade") {
+            estado.prioridade = evento.target.value;
+        }
+
+        renderizarAplicacao(estado);
+    });
+
+    campoOrdenacao.addEventListener("change", (evento) => {
+        estado.ordenacao = evento.currentTarget.value;
+        renderizarAplicacao(estado);
+    });
+
+    botaoLimpar.addEventListener("click", () => {
+        limparCriterios(estado);
+        renderizarAplicacao(estado);
+    });
+}
+
+async function iniciar() {
+    instalarEventosDosControles();
+    renderizarAplicacao(estado);
+
+    try {
+        estado.tarefas = await carregarTarefas();
+        estado.carregamento = "sucesso";
+        estado.erro = null;
+        renderizarAplicacao(estado);
+        instalarEventosDoQuadro(quadro, estado.tarefas);
     } catch (erro) {
-        renderizarEstado("erro", criarMensagemDeErro(erro));
+        estado.carregamento = "erro";
+        estado.erro = criarMensagemDeErro(erro);
+        renderizarAplicacao(estado);
     }
 }
 
