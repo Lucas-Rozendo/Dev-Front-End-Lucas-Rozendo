@@ -4,18 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokéTarefas | Gerenciador Acadêmico</title>
-    <meta name="theme-color" content="#2859c5">
+    <meta name="theme-color" content="#dc1538">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23fff' stroke='%23172a4e' stroke-width='4'/%3E%3Cpath d='M4 32a28 28 0 0 1 56 0H4z' fill='%23ef5350'/%3E%3Cpath d='M4 32h56' stroke='%23172a4e' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='9' fill='%23fff' stroke='%23172a4e' stroke-width='4'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Chakra+Petch:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="./js/app.js"></script>
 </head>
 <body>
     <header class="cabecalho">
+        <div class="pokebolas-fundo" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <a class="marca" href="#conteudo-principal" aria-label="PokéTarefas — ir para o conteúdo principal">
+            <span class="marca-pokebola" aria-hidden="true"></span>
+            <span>Poké<strong>Tarefas</strong></span>
+            <small>Kanto · Gen I</small>
+        </a>
+
         <div class="cabecalho-conteudo">
-            <p class="cabecalho-etiqueta"><span></span> Central do treinador · Semestre 2026.2</p>
+            <p class="cabecalho-etiqueta"><span aria-hidden="true"></span> Região de Kanto · Semestre 2026.2</p>
             <h1>Transforme tarefas em <span>missões vencidas</span></h1>
             <p class="cabecalho-texto">Organize sua jornada acadêmica, avance por cada etapa e complete seu quadro como um verdadeiro Mestre Pokémon.</p>
 
@@ -29,16 +41,17 @@
         <div class="cabecalho-ilustracao" aria-hidden="true">
             <div class="circulo-decorativo"></div>
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="">
+            <span class="cabecalho-nivel">Pokédex #025 · Kanto</span>
         </div>
     </header>
 
-    <main>
+    <main id="conteudo-principal">
         <section class="controles" aria-labelledby="titulo-filtros">
             <div class="controles-cabecalho">
                 <span class="controles-icone" aria-hidden="true">⌕</span>
                 <div>
                     <p>Encontre sua próxima missão</p>
-                    <h2 id="titulo-filtros">Filtro de buscas</h2>
+                    <h2 id="titulo-filtros">Central de busca</h2>
                 </div>
             </div>
 
@@ -50,36 +63,40 @@
             <fieldset>
                 <legend>Prioridade</legend>
 
-                <input type="radio" id="todas-prioridades" name="prioridade" value="todas" checked>
-                <label for="todas-prioridades">Todas</label>
+                <div class="opcoes-filtro">
+                    <input type="radio" id="todas-prioridades" name="prioridade" value="todas" checked>
+                    <label for="todas-prioridades">Todas</label>
 
-                <input type="radio" id="baixa" name="prioridade" value="baixa">
-                <label for="baixa">Baixa</label>
+                    <input type="radio" id="baixa" name="prioridade" value="baixa">
+                    <label for="baixa">Baixa</label>
 
-                <input type="radio" id="media" name="prioridade" value="media">
-                <label for="media">Média</label>
+                    <input type="radio" id="media" name="prioridade" value="media">
+                    <label for="media">Média</label>
 
-                <input type="radio" id="alta" name="prioridade" value="alta">
-                <label for="alta">Alta</label>
+                    <input type="radio" id="alta" name="prioridade" value="alta">
+                    <label for="alta">Alta</label>
+                </div>
             </fieldset>
 
             <fieldset>
                 <legend>Status</legend>
 
-                <input type="radio" id="todos-status" name="status" value="todos" checked>
-                <label for="todos-status">Todos</label>
+                <div class="opcoes-filtro">
+                    <input type="radio" id="todos-status" name="status" value="todos" checked>
+                    <label for="todos-status">Todos</label>
 
-                <input type="radio" id="a-fazer" name="status" value="a-fazer">
-                <label for="a-fazer">A fazer</label>
+                    <input type="radio" id="a-fazer" name="status" value="a-fazer">
+                    <label for="a-fazer">A fazer</label>
 
-                <input type="radio" id="em-andamento" name="status" value="em-andamento">
-                <label for="em-andamento">Em andamento</label>
+                    <input type="radio" id="em-andamento" name="status" value="em-andamento">
+                    <label for="em-andamento">Em andamento</label>
 
-                <input type="radio" id="em-revisao" name="status" value="em-revisao">
-                <label for="em-revisao">Em revisão</label>
+                    <input type="radio" id="em-revisao" name="status" value="em-revisao">
+                    <label for="em-revisao">Em revisão</label>
 
-                <input type="radio" id="concluidas" name="status" value="concluida">
-                <label for="concluidas">Concluídas</label>
+                    <input type="radio" id="concluidas" name="status" value="concluida">
+                    <label for="concluidas">Concluídas</label>
+                </div>
             </fieldset>
 
             <div class="campo-ordenacao">
@@ -95,12 +112,40 @@
 
         <div id="status-tarefas" class="estado-tela" role="status" aria-live="polite"></div>
 
+        <aside class="trilha-evolucao" aria-labelledby="titulo-evolucao">
+            <div class="trilha-evolucao-cabecalho">
+                <span class="trilha-insignia" aria-hidden="true">XP</span>
+                <div>
+                    <p>Jornada por Kanto</p>
+                    <h2 id="titulo-evolucao">Evolução da sua jornada</h2>
+                </div>
+            </div>
+
+            <ol>
+                <li>
+                    <span class="evolucao-numero">01</span>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" alt="Charmander">
+                    <div><strong>Aceitar missão</strong><small>Comece a jornada</small></div>
+                </li>
+                <li>
+                    <span class="evolucao-numero">02</span>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png" alt="Charmeleon">
+                    <div><strong>Ganhar experiência</strong><small>Avance no desafio</small></div>
+                </li>
+                <li>
+                    <span class="evolucao-numero">03</span>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" alt="Charizard">
+                    <div><strong>Conquistar insígnia</strong><small>Complete a missão</small></div>
+                </li>
+            </ol>
+        </aside>
+
         <div class="quadro-cabecalho">
             <div>
                 <p>Jornada do treinador</p>
                 <h2>Quadro de missões</h2>
             </div>
-            <span aria-hidden="true"><i></i> Dados carregados do JSON</span>
+            <span><i aria-hidden="true"></i> Sincronizado com dados.json</span>
         </div>
 
         <div id="quadro-tarefas" class="quadro-tarefas" aria-busy="false">
@@ -127,8 +172,11 @@
     </main>
 
     <footer>
-        <p><strong>Lucas Gabriel Rozendo da Silva</strong> — Desenvolvimento Frontend</p>
-        <small>Projeto acadêmico não oficial inspirado no universo Pokémon.</small>
+        <span class="footer-pokebola" aria-hidden="true"></span>
+        <div>
+            <p><strong>Lucas Gabriel Rozendo da Silva</strong> — Desenvolvimento Frontend</p>
+            <small>Projeto acadêmico não oficial inspirado no universo Pokémon.</small>
+        </div>
     </footer>
 </body>
 </html>
